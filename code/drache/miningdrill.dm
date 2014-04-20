@@ -1,28 +1,4 @@
-/proc/dirToX(dir)
-	switch(dir)
-		if(NORTH)
-			return 0
-		if(SOUTH)
-			return 0
-		if(EAST)
-			return 1
-		if(WEST)
-			return -1
-
-/proc/dirToY(dir)
-	switch(dir)
-		if(NORTH)
-			return 1
-		if(SOUTH)
-			return -1
-		if(EAST)
-			return 0
-		if(WEST)
-			return 0
-
-
 /************************ MINING DRILL ************************/
-
 
 /proc/getMaterialsByLayer(var/layer)
 	switch(layer)
@@ -37,18 +13,8 @@
 		if(66 to INFINITY)
 			return list(/obj/item/weapon/ore/plasma, /obj/item/weapon/ore/glass, /obj/item/weapon/ore/iron, /obj/item/weapon/ore/silver, /obj/item/weapon/ore/gold, /obj/item/weapon/ore/diamond, /obj/item/weapon/ore/uranium)
 
-var/turf/minedTurfs[0] //array of turfs already mined on and their corresponding layer.
-var/turf/maxTurfLayer[0]
-
-/mob/verb/getLayers()
-	set name = "Get Layers"
-	set category = "Special Commands"
-
-	for(var/t in minedTurfs)
-		usr << "[t] = [minedTurfs[t]]"
-	usr << "-----------"
-	for(var/tt in maxTurfLayer)
-		usr << "[tt] = [maxTurfLayer[tt]]"
+var/minedTurfs[0] //array of turfs already mined on and their corresponding layer.
+var/maxTurfLayer[0]
 
 /obj/machinery/miningdrill
 	name = "mining drill"
