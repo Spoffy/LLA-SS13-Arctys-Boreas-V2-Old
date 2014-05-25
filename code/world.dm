@@ -41,7 +41,6 @@
 
 	//END ICE INITS
 
-
 	load_configuration()
 	load_mode()
 	load_motd()
@@ -338,3 +337,10 @@ proc/establish_db_connection()
 		return 1
 
 #undef FAILED_DB_CONNECTION_CUTOFF
+
+
+
+////////////////////////////////////////////////////
+
+//PUT TYPES IN THE LIST IF YOU WANT TO HIDE THEM FROM SPAWNING/GAME PANEL/TELEPORT/JUMP TO AREA.
+var/list/hiddenTypes = list(/obj/effect/rend, /area/centcom)

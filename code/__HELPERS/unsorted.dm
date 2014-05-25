@@ -769,7 +769,14 @@ atom/proc/GetTypeInAllContents(typepath)
 
 //Returns: all the areas in the world, sorted.
 /proc/return_sorted_areas()
-	return sortAtom(return_areas())
+	var/list/returnList = sortAtom(return_areas())
+
+	for(var/type in hiddenTypes)
+		if(istype(type, /area))
+			for(var/atype in returnList)
+				if(istype(type, atype))
+					returnList -= atype
+	return returnList
 
 //Takes: Area type as text string or as typepath OR an instance of the area.
 //Returns: A list of all areas of that type in the world.
