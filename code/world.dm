@@ -1,7 +1,7 @@
 /world
 	mob = /mob/new_player
-	turf = /turf/space
-	area = /area
+	turf = /turf/unsimulated/snow
+	area = /area/surface
 	view = "15x15"
 	cache_lifespan = 1
 
@@ -34,6 +34,13 @@
 		world.log << "Your server's BYOND version does not meet the recommended requirements for /tg/station code. Please update BYOND."
 
 	make_datum_references_lists()	//initialises global lists for referencing frequently used datums (so that we only ever do it once)
+
+	//START ICE INITS
+
+	init_construction_kits()
+
+	//END ICE INITS
+
 
 	load_configuration()
 	load_mode()
