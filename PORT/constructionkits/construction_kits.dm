@@ -1,7 +1,7 @@
 obj/constructionkit/custom
 	example
 		itemname = "Example Machine"
-		itempath = /obj/item/weapon/storage/bible
+		itempath = /obj/item/weapon/storage/book/bible
 
 		setup()
 			add_required_part("Crowbar",/obj/item/weapon/crowbar)
