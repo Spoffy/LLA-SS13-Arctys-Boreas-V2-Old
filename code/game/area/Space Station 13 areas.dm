@@ -78,9 +78,6 @@ var/list/ghostteleportlocs = list()
 
 proc/process_ghost_teleport_locs()
 	for(var/area/AR in world)
-		for(var/type in hiddenTypes)
-			if(istype(AR, type))
-				continue
 		if(ghostteleportlocs.Find(AR.name)) continue
 		if(istype(AR, /area/turret_protected/aisat) || istype(AR, /area/derelict) || istype(AR, /area/tdome))
 			ghostteleportlocs += AR.name
@@ -133,6 +130,234 @@ proc/process_ghost_teleport_locs()
 //These are shuttle areas, they must contain two areas in a subgroup if you want to move a shuttle from one
 //place to another. Look at escape shuttle for example.
 //All shuttles show now be under shuttle since we have smooth-wall code.
+
+// Security department
+
+/area/security_department
+	name = "Security"
+	icon_state = "red2"
+
+/area/security_department/armory //Must place under AI_monitored area
+	name = "Armory"
+	icon_state = "armory"
+
+/area/security_department/warden
+	name = "Warden's Office"
+	icon_state = "Warden"
+
+/area/security_department/hos
+	name = "Head of Security's Office"
+	icon_state = "sec_hos"
+
+/area/security_department/detective
+	name = "Detective's Office"
+	icon_state = "detective"
+
+/area/security_department/interrogation
+	name = "Interrogation Room"
+	icon_state = "interrogation"
+
+/area/security_department/medbay
+	name = "Security Medbay"
+	icon_state = "medbay"
+
+/area/security_department/office
+	name = "Security Office"
+	icon_state = "security_office"
+
+/area/security_department/storage
+	name = "Security Storage"
+	icon_state = "storage"
+
+/area/security_department/smes
+	name = "Security SMES Storage"
+	icon_state = "smes"
+
+/area/security_department/brig
+	name = "Brig"
+	icon_state = "brig"
+
+/area/security_department/hallway
+	name = "Main Hallway"
+	icon_state = "security_hallway"
+
+/area/security_department/prison
+	name = "Prison Wing"
+	icon_state = "sec_prison"
+
+/area/security_department/execution
+	name = "Execution Chamber"
+	icon_state = "execution"
+
+/area/security_department/law
+	name = "Law Office"
+	icon_state = "law"
+
+/area/security_department/court
+	name = "Court Room"
+	icon_state = "courtroom"
+
+/area/security_department/eva
+	name = "Security EVA"
+	icon_state = "eva"
+
+/area/security_department/checkpoint
+	name = "Security Checkpoint"
+	icon_state = "checkpoint1"
+
+/area/security_department/lobby
+	name = "Security Lobby"
+	icon_state = "security_lobby"
+
+// Command department
+/area/command
+	name = "Command"
+	icon_state = "purple"
+
+/area/command/bridge
+	name = "Bridge"
+	icon_state = "bridge"
+
+/area/command/captain
+	name = "Captain's Office"
+	icon_state = "captain"
+
+/area/command/hop
+	name = "Head of Personnel's Office"
+	icon_state = "hop"
+
+/area/command/conference
+	name = "Conference Room"
+	icon_state = "conference"
+
+/area/command/vaccant
+	name = "Vaccant Office"
+	icon_state = "office"
+
+/area/command/hallway
+	name = "Bridge Hallway"
+	icon_state = "bridge_hallway"
+
+/area/command/smes
+	name = "Bridge SMES Storage"
+	icon_state = "smes"
+
+/area/command/teleport
+	name = "Teleporter Room"
+	icon_state = "teleporter"
+
+
+// Crew sector
+/area/crew
+	name = "Crew Sector"
+	icon_state = "green"
+
+/area/crew/kitchen
+	name = "Kitchen"
+	icon_state = "purple"
+
+/area/crew/botany
+	name = "Hydroponics"
+	icon_state = "bridge"
+
+/area/crew/bar
+	name = "Bar"
+	icon_state = "captain"
+
+/area/crew/bartender
+	name = "Bartender"
+	icon_state = "hop"
+
+/area/crew/doorms
+	name = "Dormitories"
+	icon_state = "conference"
+
+/area/crew/locker_room
+	name = "Locker Room"
+	icon_state = "office"
+
+/area/crew/cryo
+	name = "Cryo Room"
+	icon_state = "bridge_hallway"
+
+/area/crew/clown
+	name = "Clown's Office"
+	icon_state = "smes"
+
+/area/crew/mime
+	name = "Mime's Office"
+	icon_state = "teleporter"
+
+/area/crew/office
+	name = "Vaccant Office"
+	icon_state = "teleporter"
+
+/area/crew/coffee_shop
+	name = "Coffee Shop"
+	icon_state = "teleporter"
+
+/area/crew/restroom
+	name = "Restroom"
+	icon_state = "teleporter"
+
+/area/crew/lounge
+	name = "Assistant's Lounge"
+	icon_state = "teleporter"
+
+
+// Engineering sector
+/area/engineering
+	name = "Engineering"
+	icon_state = "dk_yellow"
+
+/area/engineering/power_storage
+	name = "Power Storage"
+	icon_state = "smes"
+
+/area/engineering/locker_room
+	name = "Locker Room"
+	icon_state = "locker"
+
+/area/engineering/turbine
+	name = "Turbine Room"
+	icon_state = "turbine"
+
+/area/engineering/hallway
+	name = "Engineering Hallway"
+	icon_state = "engine_hallway"
+
+/area/engineering/ce
+	name = "Chief Engineer's Office"
+	icon_state = "ce"
+
+/area/engineering/secure_storage
+	name = "Secure Storage"
+	icon_state = "engine_storage"
+
+/area/engineering/nuclear_1
+	name = "Nuclear Reactor Chamber I"
+	icon_state = "engine_1"
+
+/area/engineering/nuclear_2
+	name = "Nuclear Reactor Chamber II"
+	icon_state = "engine_2"
+
+/area/engineering/nuclear_3
+	name = "Nuclear Reactor Chamber III"
+	icon_state = "engine_3"
+
+/area/engineering/lobby
+	name = "Engineering Lobby"
+	icon_state = "engine_lobby"
+
+/area/engineering/tech_storage
+	name = "Tech Storage"
+	icon_state = "tech_storage"
+
+/area/engineering/material_storage
+	name = "Material Storage"
+	icon_state = "storage"
+
 
 /area/shuttle //DO NOT TURN THE lighting_use_dynamic STUFF ON FOR SHUTTLES. IT BREAKS THINGS.
 	requires_power = 0
@@ -758,6 +983,14 @@ proc/process_ghost_teleport_locs()
 /area/library
  	name = "\improper Library"
  	icon_state = "library"
+
+/area/clown
+ 	name = "\improper Clown's Office"
+ 	icon_state = "clown"
+
+/area/mime
+ 	name = "\improper Mime's Office"
+ 	icon_state = "mime"
 
 /area/chapel/main
 	name = "\improper Chapel"
@@ -1442,22 +1675,25 @@ proc/process_ghost_teleport_locs()
 
 //Misc
 
-
+/area/wreck
+	name = "\improper Prototype station"
+	icon_state = "storage"
+	has_gravity = 1
 
 /area/wreck/ai
-	name = "\improper AI Chamber"
-	icon_state = "ai"
+	name = "\improper Prototype Botany"
+	icon_state = "hydro"
 
 /area/wreck/main
-	name = "\improper Wreck"
+	name = "\improper Prototype Hall"
 	icon_state = "storage"
 
 /area/wreck/engineering
-	name = "\improper Power Room"
+	name = "\improper Prototype Engineering"
 	icon_state = "engine"
 
 /area/wreck/bridge
-	name = "\improper Bridge"
+	name = "\improper Prototype Bridge"
 	icon_state = "bridge"
 
 /area/generic
@@ -1540,6 +1776,8 @@ proc/process_ghost_teleport_locs()
 	requires_power = 0
 	has_gravity = 1
 	ambientsounds = list('sound/ambience/shore.ogg', 'sound/ambience/seag1.ogg','sound/ambience/seag2.ogg','sound/ambience/seag2.ogg')
+
+
 
 
 /////////////////////////////////////////////////////////////////////
